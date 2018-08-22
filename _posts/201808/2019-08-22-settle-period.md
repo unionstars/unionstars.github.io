@@ -31,7 +31,7 @@ author: "张学刚"
 
 ### 拉平周期系统交互时序
 
-![拉平周期系统交互时序](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-08-22-settle-period/01-01.png)
+![拉平周期系统交互时序](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-08-22-settle-period/01-01.png)
 
 ## 优缺点
 

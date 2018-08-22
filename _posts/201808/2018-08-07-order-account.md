@@ -16,7 +16,7 @@ author: "张学刚"
 
 ##流程修改前##
 
-![台账系统流程交互](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-08-07-pay-switch/01-01.png)
+![台账系统流程交互](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-08-07-pay-switch/01-01.png)
 
 正向流程
 
