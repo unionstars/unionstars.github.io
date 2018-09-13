@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "重构-代码复杂度"
+title:  "圈复杂度(cyclomatic complexity)"
 date:   2018-07-11 12:00:00
 
 categories: Java
