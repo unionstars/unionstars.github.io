@@ -14,6 +14,8 @@ author: "张学刚"
 
 ## 业务概述
 
+台账系统正向接收订单系统的应收数据，支付系统的实收数据，逆向接收售后系统应收数据，退款系统的实收数据，应收和实收，都会触发对账任务，对账完成后，订单中间件(xstore-order-middleware)接收对账结果，并下发给OPC(订单生产中心)控制订单生产。
+
 ## 名词解释
 
 ### 数据来源
@@ -28,6 +30,8 @@ author: "张学刚"
 
 - 7fresh
 - JD
+- 到家
+- 华润订单
 
 ### originalBillId 原始单据编号
 
@@ -79,3 +83,7 @@ author: "张学刚"
 - 108，“多退款” //终态
 
 ## 业务流程
+
+### 系统交互流程图
+
+![系统交互流程图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-08-07-order-account-business.md/01-01.png)
