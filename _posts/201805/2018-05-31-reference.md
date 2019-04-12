@@ -30,7 +30,7 @@ author: "union all"
 
 业务架构的分享参考此图开始展开分享：
 
-![电商系统业务架构图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-06-11-architecture/9.PNG)
+![电商系统业务架构图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-06-11-architecture/9.PNG)
 
 用户系统
 

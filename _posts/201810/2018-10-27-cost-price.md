@@ -8,7 +8,7 @@ tags: learningnote
 author: "张学刚"
 ---
 
-![电商系统业务架构图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-06-11-architecture/25.gif)
+![电商系统业务架构图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-06-11-architecture/25.gif)
 
 >就是你仓库里现货的一个平均价格，可能你每一个批次的进货价不一样，统计现在时间的整体平均价格。
 
@@ -67,7 +67,7 @@ author: "张学刚"
 
 #### **商户入驻结算整体架构图**
 
-![联营商户入驻结算](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/01-01.jpg)
+![联营商户入驻结算](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/01-01.jpg)
 
 #### **商户入驻结算整体架构图描述**
 
@@ -98,7 +98,7 @@ author: "张学刚"
 
 #### **商户入驻结算交互序列图**
 
-![商户入驻结算交互序列图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/01-02.png)
+![商户入驻结算交互序列图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/01-02.png)
 
 更多业务关联关系表和结算账户详细设计与缘由，参考《结算账户体系设计》
 
@@ -112,7 +112,7 @@ author: "张学刚"
 
 #### **计费整体架构图**
 
-![联营计费服务](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/02-01.jpg)
+![联营计费服务](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/02-01.jpg)
 
 #### **计费整体架构图描述**
 
@@ -126,13 +126,13 @@ author: "张学刚"
 
 **103-01 计费引擎-业务规则匹配器** 业务规则匹配器核心解决的是，业务系统的数据推送过来之后，如何识别并匹配到系统计费引擎中已经支持的业务规则。
 
-![计费规则匹配流程](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/02-02.jpg)
+![计费规则匹配流程](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/02-02.jpg)
 
 **103-02 计费引擎-业务规则配置服务** 计费引擎业务规则的配置服务，配置计费引擎中可以支持的业务规则，业务规则实现后，供 ```103-01 计费引擎-业务规则匹配器``` 使用。
 
 **103-03 计费引擎-数据快照服务** 数据快照核心解决的是获取计费过程中需要的计费要素（计费公式中的因子），例：```货款``` = ```商品价格``` - ```优惠券```，商品价格和优惠券是计费公式中的因子，快照的保存也为计费结果出现问题时可以回溯。
 
-![数据快照服务](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/02-03.jpg)
+![数据快照服务](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/02-03.jpg)
 
 **103-04 计费引擎-数据策略服务** 核心提供了计费公式中锁依赖的计费因子的获取来源关系，例：A业务的计费逻辑，其中某一费用的计算拿上边货款的计费公式来说，```货款``` = ```商品价格``` - ```优惠券```，其中商品价格需要从 ```商品系统``` 获取，优惠券需要从 ```优惠券系统``` 系统获取，这个时候，我们为每个系统配置一套数据策略，策略的实现中获取计费的因子，这样当一个业务流转到快照服务时，系统通过业务编号，获取业务与数据策略组，并执行数据策略组，返回计费公式所依赖的计费因子值。
 
@@ -140,7 +140,7 @@ author: "张学刚"
 
 **103-06 计费引擎-费用计算执行器** 核心完成的功能是接收前几步的机构，调用计费公式配置服务，获取计费计费公式进行计费并输出结果。
 
-![费用计算执行器](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/02-04.jpg)
+![费用计算执行器](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/02-04.jpg)
 
 **103-07 计费引擎-计费公式配置服务** 主要维护各业务需要计算的费用的信息包括：费用状态（是否启用），费用类型，费用计算公式等。该数据主要存储在MySql当中。
 
@@ -167,7 +167,7 @@ author: "张学刚"
 
 #### **计费引擎交互序列图**
 
-![计费引擎交互序列图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/02-05.png)
+![计费引擎交互序列图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/02-05.png)
 
 更多联合营商计费详细涉及与缘由，参考《联营商计费设计》
 
@@ -188,7 +188,7 @@ author: "张学刚"
 
 #### **结算整体架构图**
 
-![结算系统服务](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/03-01.jpg)
+![结算系统服务](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/03-01.jpg)
 
 #### **结算整体架构图描述**
 
@@ -230,7 +230,7 @@ author: "张学刚"
 
 #### **结算中心交互序列图**
 
-![结算中心序列图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/03-02.png)
+![结算中心序列图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/03-02.png)
 
 联合营商结算详细涉及与缘由，参考《联营商结算设计》
 
@@ -273,7 +273,7 @@ OA -[#red]> 收付费中心 : 审批完成状态(MQ)
 
 #### **收付费、收付款整体序列图**
 
-![收付费序列图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/04-01.png)
+![收付费序列图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/04-01.png)
 
 ### **对账**
 
@@ -292,7 +292,7 @@ OA -[#red]> 收付费中心 : 审批完成状态(MQ)
 
 #### **对账整体架构图**
 
-![对账整体架构图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/05-02.jpg)
+![对账整体架构图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/05-02.jpg)
 
 #### **对账款整体架构图描述**
 
@@ -321,4 +321,4 @@ binlog -[#red]> 消息中心  : 监控binlog日志并发送到消息中心
 
 #### **对账整体序列图**
 
-![对账整体序列图](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-07-11-settle/05-03.png)
+![对账整体序列图](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-07-11-settle/05-03.png)

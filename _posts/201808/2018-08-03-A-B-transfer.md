@@ -34,7 +34,7 @@ author: "张学刚"
 
 #### **系统交互流程**
 
-![事务的处理流程](https://raw.githubusercontent.com/unionall/unionall.github.io/master/assets/images/pictures/2018-08-03-transfer/01-02.png)
+![事务的处理流程](https://raw.githubusercontent.com/unionstars/unionstars.github.io/master/assets/images/pictures/2018-08-03-transfer/01-02.png)
 
 这里面是以A系统的最终态，来保证数据的最终一致性，这里还有一种方案，将对账的这一块作为一个计算密集型的模块，单独拆分出来，作为一个微服务部署，然后，对账系统，负责接收A与B的消息，进行对账，如果A/B存在差异的时候，对账系统发起补偿，来调度A或者B系统，通过主动查询和补偿的方式，达到最终一致性。
 
