@@ -6,12 +6,12 @@
   <section id="content">
     <div class="container m-t-lg m-b-lg">
       <div class="row">
-        <div class="col-sm-9">
+        {% include sidebar.html %}
+        <div class="col-sm-7">
           <div class="blog-post">
             {{ content }}
           </div>
         </div>
-        {% include sidebar.html %}
       </div>
     </div>
   </section>
