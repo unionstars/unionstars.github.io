@@ -4,7 +4,7 @@ title:  "mysql 死锁问题分析"
 date:   2018-07-11 12:00:00
 
 categories: other
-tags: 
+tags: mysql
 author: "张学刚"
 ---
 
