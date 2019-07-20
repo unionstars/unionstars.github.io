@@ -36,7 +36,7 @@ specific area is only accessible by the thread responsible for its creation.
 It's destroyed during the thread exits. Figure 1 shows different
 groups of JVM runtime memory.
 
-![memory model](/images/jvmruntime/jvm-runtime-memory.png?style=centerme)
+![memory model](/assets/images/jvmruntime/jvm-runtime-memory.png?style=centerme)
 
 {:.image-caption}
 Figure 1. JVM runtime memory
@@ -65,7 +65,7 @@ references to methods and fields.
 values of a class. A field value points to a value stored in the runtime 
 constant pool.
 
-![memory model](/images/jvmruntime/jvm-method-area.png?style=centerme)
+![memory model](/assets/images/jvmruntime/jvm-method-area.png?style=centerme)
 
 {:.image-caption}
 Figure 2. A class method area
@@ -84,7 +84,7 @@ However, a garbage collection implementation scheme is not specified and
 it is configurable. A heap area is shared across all threads.
 A JVM throws an _OutofMemoryError_ if the heap runs out of allocation space.
 
-![memory model](/images/jvmruntime/jvm-heap.png?style=centerme)
+![memory model](/assets/images/jvmruntime/jvm-heap.png?style=centerme)
 
 {:.image-caption}
 Figure 3. JVM heap
@@ -100,7 +100,7 @@ and pushed into a thread stack every time a method is invoked. A frame is popped
 when a method returns. Though there may be multiple frames on a stack from nested 
 method calls, only one frame is active at a given time for a thread.
 
-![memory model](/images/jvmruntime/jvm-stack.png?style=centerme)
+![memory model](/assets/images/jvmruntime/jvm-stack.png?style=centerme)
 
 {:.image-caption}
 Figure 4. JVM stack
@@ -120,7 +120,7 @@ of method invocation irrespective of whether the completion is normal or
 abrupt (uncaught exception). As shown in Figure 5, each frame has its own operand 
 stack, an array of local variables, and a reference to the runtime constant pool.
 
-![memory model](/images/jvmruntime/jvm-stack-frame.png?style=centerme)
+![memory model](/assets/images/jvmruntime/jvm-stack-frame.png?style=centerme)
 
 {:.image-caption}
 Figure 5. A stack frame
