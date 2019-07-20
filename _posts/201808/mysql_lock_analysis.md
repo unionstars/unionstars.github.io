@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "A、B转账问题实现"
+title:  "mysql 死锁问题分析"
 date:   2018-07-11 12:00:00
 
-categories: Java
-tags: learningnote
+categories: other
+tags: 
 author: "张学刚"
 ---
 

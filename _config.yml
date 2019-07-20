@@ -1,5 +1,5 @@
 # Site settings
-title: "联星"
+title: "unionstars"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://unionstars.github.io" # the base hostname & protocol for your site
 github_username: unionstars
