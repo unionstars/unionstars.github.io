@@ -1,7 +1,7 @@
 <article class="media">
   {% include display_icon.html %}
   <div class="media-body">
-    <a href="{{ post.url | prepend: site.baseurl }}" class="h4 text-success">{{ post.title }}</a>
+    <a href="{{ post.url | prepend: site.baseurl }}" class="h5 text-success">{{ post.title }}</a>
     <small class="block m-t-xs">
       {% for post_tag in post.tags %}
         {{ post_tag }}
