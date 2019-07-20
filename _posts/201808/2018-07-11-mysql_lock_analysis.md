@@ -4,7 +4,7 @@ title:  "mysql 死锁问题分析"
 date:   2018-07-11 12:00:00
 
 categories: mysql
-tags: 死锁 mysql, mysql
+tags: deadlock mysql database
 author: "张学刚"
 ---
 
