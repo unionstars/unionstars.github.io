@@ -3,7 +3,7 @@ layout: post
 title:  "mysql 死锁问题分析"
 date:   2018-07-11 12:00:00
 
-categories: other
+categories: mysql
 tags: mysql
 author: "张学刚"
 ---
