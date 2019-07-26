@@ -77,7 +77,7 @@ Record lock, heap no 374
 
 #### 解读死锁日志
 
-![死锁日志解读](/assets/images/pictures/2019-07-26-mysql_lock_in_action/20190725100725364_422396275.png?style=centerme)
+![死锁日志解读](/assets/images/pictures/2019-07-26-mysql_local_in_action/20190725100725364_422396275.png?style=centerme)
 
 我们先来看读一下这个死锁日志，主要关注上边红色的内容，读完之后，是不是发现死锁的日志不全？TRANSACTION2中持有的S锁（lock mode S），这里我们看不出是谁添加的。这也是死锁分析难的一个原因， 这个时候我们需要回到业务上,了解整个事务的逻辑。
 
@@ -140,7 +140,7 @@ ROLLBACK;
 
 解释一下这句话： session1拿到了X锁，session2和session3发生duplicate-key错的时候，同时去请求S锁。当session1回滚，它释放X锁，此时session2和session3 同时获得S锁，并同时去请求X锁。引起了死锁。我们看一下这个持有和竞争的关系：
 
-![](/assets/images/pictures/2019-07-26-mysql_lock_in_action/20190725123235910_1658579667.png?style=centerme)
+![](/assets/images/pictures/2019-07-26-mysql_local_in_action/20190725123235910_1658579667.png?style=centerme)
 
 
 这个地方是核心要理解锁的一个互斥和共存的关系，因为X和S锁是互斥的，session2想要X锁，必须等待session3的S锁释放， session3想要获得X锁也要session2释放S锁，这个时候构成了环路等待，引起了死锁。
@@ -212,7 +212,7 @@ if (xxxService.getXxByIdx(XX) != null) {
 
 假设程序的执行状态是这样呢？ 会不会存在问题？ 线程1经过1和2到达3，线程2经过1到达2.
 
-![](/assets/images/pictures/2019-07-26-mysql_lock_in_action/20190725145431560_396427721.png?style=centerme)
+![](/assets/images/pictures/2019-07-26-mysql_local_in_action/20190725145431560_396427721.png?style=centerme)
 
 
 我们模拟一下这个场景
