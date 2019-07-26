@@ -1,5 +1,5 @@
 /* https://github.com/richleland/pygments-css */
-.highlight pre { background: #141414; color: #E6E1DC; }
+.highlight pre { background: #073a30; color: #E6E1DC; }
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #BC9458; font-style: italic} /* Comment */
 .highlight .err { color: #E6E1DC} /* Error */
@@ -85,7 +85,7 @@
 
 /* CSS for kramdown */
 .highlighter-rouge pre {
-  background: #141414;
+  background: #073a30;
   color: #E6E1DC;
   padding: 10px 20px;
   counter-reset: line-numbering;

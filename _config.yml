@@ -8,7 +8,7 @@ timezone: Beijing
 plugins: ['jekyll-paginate']
 
 # Build settings
-# highlighter: rouge
+highlighter: rouge
 permalink: /:categories/:title/
 
 markdown: kramdown
