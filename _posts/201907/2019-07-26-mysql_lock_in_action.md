@@ -12,7 +12,6 @@ published: true
 ---
 
 #### 背景介绍
-
 我们在进行互联网应用开发的时候，高并发场景下，很容易遇到死锁的问题，我们从jdbc抛出的死锁异常中，很难看出死锁发生的具体原因，jdbc只是给了一个死锁异常，
 但是并没有抛出导致死锁的原因，这是因为mysql本身，发生死锁的时候就没有抛出更多的错误信息。MySQL/InnoDB的加锁分析，对应用开发来说也是比较复杂的，因为
 锁这一块的复杂性，很多关于数据库锁的文章，并没有实际的验证，而是似是而非猜测性的，有一些误导。这里是对一个insert和update同一索引数据导致的死锁案例的
@@ -20,7 +19,6 @@ published: true
 
 
 #### 发现问题
-
 X同学在生产上发现了如下的死锁异常，想让我一起排查下，登陆服务器后，看到了类似如下的异常信息：
 
 ```sql
@@ -64,7 +62,6 @@ Record lock, heap no 374
 ```
 
 #### 解读死锁日志
-
 ![死锁日志解读](/assets/images/pictures/2019-07-26-mysql_local_in_action/20190725100725364_422396275.png?style=centerme)
 
 我们先来看读一下这个死锁日志，主要关注上边红色的内容，读完之后，是不是发现死锁的日志不全？TRANSACTION2中持有的S锁（lock mode S），这里我们看不出是谁添加的。
@@ -287,6 +284,7 @@ lock_deadlock_recursive是迭代的主函数。 start为初始事务, wait_lock�
 
 
 本文中还参考了如下内容：
+    
 [mysql官方手册](https://dev.mysql.com/doc/refman/5.6/en/innodb-deadlocks.html)
 
 [何登成的技术博客](http://hedengcheng.com/?p=771)
