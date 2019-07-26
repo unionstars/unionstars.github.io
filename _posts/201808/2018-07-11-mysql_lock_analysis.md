@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MySQL 死锁问题分析"
+title:  "Paper Reference"
 date:   2018-07-11 12:00:00
 
 categories: mysql
