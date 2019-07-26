@@ -12,17 +12,12 @@ published: true
 ---
 
 #### 背景介绍
-
-
-
-## 背景介绍
 MySQL/InnoDB的加锁分析，对应用开发来说是比较复杂的
-
 
 
 ## 程序中的死锁日志
 
-```log
+```sql
 在分库:[ worker_10~~>jdbc:mysql://hostname:3306/dbname?user=user ],
 执行SQL:[ UPDATE tablename SET col1 = col1 + 20,  modified_date = NOW() WHERE order_id = 'xxx' ], 
 发生异常:Deadlock found when trying to get lock; try restarting transaction; 
@@ -42,14 +37,11 @@ MySQL/InnoDB的加锁分析，对应用开发来说是比较复杂的
 
 
 
-## 拿到数据库死锁日志
+#### 拿到数据库死锁日志
 
 因为从程序日志上看不出死锁发生的原因，最快的方式，我们可以通过DBA拿到死锁日志，看看是否可以看出，是执行哪几个SQL引起的。
 
 ```sql
------------------------
-LATEST DETECTED DEADLOCK
-------------------------
 2019-07-18 10:03:03 7f16ff826700
 *** (1) TRANSACTION:
 TRANSACTION 46497170213, ACTIVE 0 sec starting index read
@@ -85,6 +77,7 @@ Record lock, heap no 374
 
 经过排查，我发现程序中有行代码是这么写的：
 
+
 ```java
 try {
     xxxService.insert(xx);
@@ -102,7 +95,7 @@ try {
 
 之前解决过类似的场景，可以参考这个 [inert死锁](https://dev.mysql.com/doc/refman/5.6/en/innodb-locks-set.html)。
 
->If a duplicate-key error occurs, a shared lock on the duplicate index record is set. This use of a shared lock can result in deadlock should there be multiple sessions trying to insert the same row if another session already has an exclusive lock. Suppose that an InnoDB table t1 has the following structure:
+> If a duplicate-key error occurs, a shared lock on the duplicate index record is set. This use of a shared lock can result in deadlock should there be multiple sessions trying to insert the same row if another session already has an exclusive lock. Suppose that an InnoDB table t1 has the following structure:
 
 大概解释一下这句话，当发生duplicate-key错误的时候，会对索引记录加S锁。当有一个session持有了X锁，然后又有多个session同时去插入相同行的时候可能会导致死锁， 我们来看一下这个案例：
 
@@ -136,7 +129,7 @@ Session 1:
 ROLLBACK;
 ```
 
->The first operation by session 1 acquires an exclusive lock for the row. The operations by sessions 2 and 3 both result in a duplicate-key error and they both request a shared lock for the row. When session 1 rolls back, it releases its exclusive lock on the row and the queued shared lock requests for sessions 2 and 3 are granted. At this point, sessions 2 and 3 deadlock: Neither can acquire an exclusive lock for the row because of the shared lock held by the other.
+> The first operation by session 1 acquires an exclusive lock for the row. The operations by sessions 2 and 3 both result in a duplicate-key error and they both request a shared lock for the row. When session 1 rolls back, it releases its exclusive lock on the row and the queued shared lock requests for sessions 2 and 3 are granted. At this point, sessions 2 and 3 deadlock: Neither can acquire an exclusive lock for the row because of the shared lock held by the other.
 
 解释一下这句话： session1拿到了X锁，session2和session3发生duplicate-key错的时候，同时去请求S锁。当session1回滚，它释放X锁，此时session2和session3 同时获得S锁，并同时去请求X锁。引起了死锁。我们看一下这个持有和竞争的关系：
 
@@ -324,5 +317,7 @@ lock_deadlock_recursive是迭代的主函数。 start为初始事务, wait_lock�
 
 
 本文中还参考了如下内容：
+
 [mysql官方手册](https://dev.mysql.com/doc/refman/5.6/en/innodb-deadlocks.html)
+
 [何登成的技术博客](http://hedengcheng.com/?p=771)
