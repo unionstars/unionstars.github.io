@@ -20,15 +20,14 @@
                 </div>
 
                 <div id="container"></div>
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+                <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
                 <script>
                   var gitalk = new Gitalk({
                     clientID: '{{site.ClientID}}',
                     clientSecret: '{{site.ClientSecret}}',
                     repo: '{{site.repo}}',
                     owner: '{{site.github_username}}',
-                    admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
                   })
                   gitalk.render('container')
                 </script>
