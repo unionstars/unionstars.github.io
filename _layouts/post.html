@@ -28,8 +28,8 @@
                     clientSecret: '{{site.ClientSecret}}',
                     repo: '{{site.repo}}',
                     owner: '{{site.github_username}}',
+                    labels:['Gitalk'],
                     admin: ['{{site.github_username}}'],
-                    labels:['Gitalk','gitalk'],
                   })
                   gitalk.render('container')
                 </script>
