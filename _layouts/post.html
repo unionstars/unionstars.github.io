@@ -29,7 +29,7 @@
                     repo: '{{site.repo}}',
                     owner: '{{site.github_username}}',
                     admin: ['{{site.github_username}}'],
-                    labels: '{{ site.gitalk.labels }}'.split(',').filter(l => l),
+                    labels:['Gitalk','gitalk'],
                   })
                   gitalk.render('container')
                 </script>
