@@ -21,6 +21,6 @@ paginate: 25
 github: [metadata]
 
 githubID: unionstars
-repo: https://github.com/unionstars/unionstars.github.io.git
+repo: unionstars.github.io.git
 ClientID: 264a95d2f3b06c2aed0a
 ClientSecret: 55a241c0c1220ea55de6fcc2fdc77dfd4db3378d
