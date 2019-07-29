@@ -20,10 +20,7 @@ paginate: 25
 
 github: [metadata]
 
-gitment:
-  enable: true
-  githubID: unionstars
-  repo: unionstars.github.io
-  ClientID: 264a95d2f3b06c2aed0a
-  ClientSecret: 55a241c0c1220ea55de6fcc2fdc77dfd4db3378d
-  lazy: true
+githubID: unionstars
+repo: https://github.com/unionstars/unionstars.github.io.git
+ClientID: 264a95d2f3b06c2aed0a
+ClientSecret: 55a241c0c1220ea55de6fcc2fdc77dfd4db3378d
