@@ -24,3 +24,7 @@ githubID: unionstars
 repo: unionstars.github.io
 ClientID: 264a95d2f3b06c2aed0a
 ClientSecret: 55a241c0c1220ea55de6fcc2fdc77dfd4db3378d
+
+gitalk:
+  labels:
+    - Gitalk
