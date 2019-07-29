@@ -20,18 +20,17 @@
                 </div>
 
                 <div id="container"></div>
-                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-                <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
                 <script>
-                  var gitment = new Gitment({
-                    owner: '{{site.github_username}}',
+                  var gitalk = new Gitalk({
+                    clientID: '{{site.ClientID}}',
+                    clientSecret: '{{site.ClientSecret}}',
                     repo: '{{site.repo}}',
-                    oauth: {
-                      client_id: '{{site.ClientID}}',
-                      client_secret: '{{site.ClientSecret}}',
-                    },
-                  });
-                  gitment.render('container')
+                    owner: '{{site.github_username}}',
+                    admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
+                  })
+                  gitalk.render('container')
                 </script>
 
                 <section class="panel panel-default">
