@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
+  <head>
+    <!-- style sheet of Vssue -->
+    <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+  </head>
   <body>
   {% include header.html %}
   <section id="content">
@@ -19,19 +23,47 @@
                   {{ content }}
                 </div>
 
-                <div id="container"></div>
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                <div id="vssue"></div>
+                <!-- Introduce Vue first -->
+
+                <!-- vue runtime build (runtime only)  -->
+                <script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+                <!-- OR: vue full build (runtime + compiler)  -->
+                <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+                <!-- Introduce Vssue after Vue -->
+
+                <!-- Vssue Github build -->
+                <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+                <!-- OR: Vssue Gitlab build -->
+                <script src="https://unpkg.com/vssue/dist/vssue.gitlab.min.js"></script>
+                <!-- OR: Vssue Bitbucket build -->
+                <script src="https://unpkg.com/vssue/dist/vssue.bitbucket.min.js"></script>
+                <!-- OR: Vssue Gitee build -->
+                <script src="https://unpkg.com/vssue/dist/vssue.gitee.min.js"></script>
+
+                <!-- Use Vssue as a Vue component -->
+
+                <!-- use render function for vue runtime build -->
                 <script>
-                  var gitalk = new Gitalk({
-                    clientID: '{{site.ClientID}}',
-                    clientSecret: '{{site.ClientSecret}}',
-                    repo: '{{site.repo}}',
-                    owner: '{{site.github_username}}',
-                    labels:['Gitalk'],
-                    admin: ['{{site.github_username}}'],
+                  new Vue({
+                    el: '#vssue',
+
+                    render: h => h('Vssue', {
+                      props: {
+                        // here set the title of issue of current page
+                        title: 'Vssue Dev',
+
+                        // here set the options for your OAuth App
+                        options: {
+                          owner: '{{site.github_username}}',
+                          repo: '{{site.repo}}',
+                          clientId: '{{site.ClientID}}',
+                          clientSecret: '{{site.ClientSecret}}', // only required for some of the platforms
+                        },
+                      }
+                    })
                   })
-                  gitalk.render('container')
                 </script>
 
                 <section class="panel panel-default">
