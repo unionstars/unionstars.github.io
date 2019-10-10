@@ -3,7 +3,7 @@ layout: post
 title:  "整洁架构的思考"
 date:   2018-07-11 12:00:00
 
-categories: Yeoman
+categories: tool
 tags: archtecture java Yeoman
 author: "XueGang Zhang"
 image: /images/logo.png
