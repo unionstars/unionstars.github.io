@@ -4,7 +4,7 @@ title:  "整洁架构的思考"
 date:   2018-07-11 12:00:00
 
 categories: tool
-tags: archtecture java Yeoman
+tags: archtecture java tool
 author: "XueGang Zhang"
 image: /images/logo.png
 comments: true
@@ -12,6 +12,8 @@ published: true
 ---
 
 #### 背景介绍
+
+
 我们在进行互联网应用开发的时候，高并发场景下，很容易遇到死锁的问题，我们从jdbc抛出的死锁异常中，很难看出死锁发生的具体原因，jdbc只是给了一个死锁异常，
 但是并没有抛出导致死锁的原因，这是因为mysql本身，发生死锁的时候就没有抛出更多的错误信息。MySQL/InnoDB的加锁分析，对应用开发来说也是比较复杂的，因为
 锁这一块的复杂性，很多关于数据库锁的文章，并没有实际的验证，而是似是而非猜测性的，有一些误导。这里是对一个insert和update同一索引数据导致的死锁案例的
