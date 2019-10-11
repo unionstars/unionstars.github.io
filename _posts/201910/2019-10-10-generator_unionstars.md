@@ -69,11 +69,9 @@ ALTER TABLE PAGE ADD INDEX IDX_OPERATOR(OPERATOR);
 
 #### ArchUnit与generator-unionstars
 
-
-
 减少工程创建时大量的重复工作、统一代码风格、提供开发样例、对maven仓库的依赖进行统一约束，并提供非springboot生态下的自研中间件的starter组件，以实现完整的开箱即用体验。
 
-## 规范中默认约束的组件和版本
+#### 规范中默认约束的组件和版本
 
 | 基础组件    | 版本          | 自研组件 | 版本  |
 | ----------- | ------------- | -------- | ----- |
@@ -81,6 +79,11 @@ ALTER TABLE PAGE ADD INDEX IDX_OPERATOR(OPERATOR);
 | jdk         | 1.8           |          |       |
 | lombok      | 1.18.8        |          |       |
 | gson        | 2.8.5         |          |       |
+
+
+#### 脚手架!!!
+
+现在基于以上的原则，我们可以迅速生成一个开箱即用的工程，参考本文档你仅仅需要几步就可以生成一个开箱即用的工程，并且提供了多种工程模板，api工程、rest风格的工程、center工程。[开始吧](https://www.npmjs.com/package/generator-unionstars)
 
 
 
