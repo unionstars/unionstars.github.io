@@ -32,171 +32,69 @@ Bob在在整洁架构中提到：`软件架构的终极目标是，用最小的�
 下面是脚手架实现的约束内容，有些是通过例子来约束，有些通过内置的组件进行约束。
 
 
-#### 工程创建
+#### 工程划分
 
-架手架提供了三套工程的创建模板，中心端工程（服务端的工程）、API工程、网关工程， 按用户为例，我们可以创建一个用户中心的后端服务工程、创建一个基于RPC框架的远程调用接口工程、创建一个Restful风格的http网关工程。这是我创建好的三个工程名称：`user-api  user-center  user-gateway` 而这非常简单。这里的分包原则用了传统的分层级架构，这种分层架构可能不是最合理的，可能在构建复杂系统的时候也存在很多问题，包括现在微软的.net云案例也开始使用DDD的框架结构进行构建，但是这种分层在短时间内更容易学习，不过随着技术文化的沉淀，大家对领域驱动设计实现的熟练会逐步改变，在这里更主要的让大家了解DDD的思想。
-
-user-api
-├── pom.xml
-└── src
-    └── main
-        └── java
-            └── com
-                └── unionstars
-                    └── user
-                        └── api
-                            ├── Request.java
-                            ├── Response.java
-                            ├── facade
-                            │   └── UserServiceProvider.java
-                            └── mo
-                                └── UserMO.java
+比如一个电商系统我们首先去识别各个业务领域，找到各个上下文边界，划分出具体的系统。针对单个系统，我们根据系统职责的不同再进行层次的划分，这种层次的划分可以是通过system、module、package来进行，采用哪种形式，一般与该组织所处于的发展阶段相关，并不拘泥于一种划分标准。该脚手架提供了按功能进行工程创建的模板。按功能划分我们一个小的业务领域一般有如下工程拿一个支付里边的账务领域来说。面向后端我们一般要有一个服务中心，承载的是该工程的后端服务。面向商户我们一般要有一个商家管理端，面向支付公司公司运营我们一般要有一个运营管理端，面向用户我们要有一个门户，面向app我们一般要有一个app端，并且我们一般要有一个网关来对app端提供服务，如果提供一些远程调用的服务，如果接口不放在中心的话，我们还要有一个接口工程。这些工程所提供的功能不同模板不同，就名称而言，以上的工程类似于如下的命名。`accounting-center  accounting-shop  accounting-man accounting-portal accounting-app accounting-gateway accounting-api`，
 
 
-user-center
-├── pom.xml
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── unionstars
-│   │   │           └── user
-│   │   │               └── center
-│   │   │                   ├── Application.java
-│   │   │                   ├── common
-│   │   │                   │   └── GsonUtil.java
-│   │   │                   ├── configration
-│   │   │                   ├── controller
-│   │   │                   │   ├── IndexViewController.java
-│   │   │                   │   └── LoginViewController.java
-│   │   │                   ├── dao
-│   │   │                   │   └── UserMapper.java
-│   │   │                   ├── domain
-│   │   │                   │   └── User.java
-│   │   │                   ├── interceptor
-│   │   │                   │   └── LoginInterceptor.java
-│   │   │                   └── service
-│   │   │                       ├── UserService.java
-│   │   │                       └── impl
-│   │   │                           └── UserServiceImpl.java
-│   │   └── resources
-│   │       ├── application-dev.yml
-│   │       ├── application.yml
-│   │       ├── db
-│   │       │   └── schema.sql
-│   │       ├── logback.groovy
-│   │       ├── mapper
-│   │       │   └── UserMapper.xml
-│   │       ├── spring
-│   │       │   ├── spring-config.xml
-│   │       │   ├── spring-jsf-consumer.xml
-│   │       │   └── spring-jsf-provider.xml
-│   │       ├── static
-│   │       │   ├── css
-│   │       │   │   └── login
-│   │       │   │       └── login.css
-│   │       │   ├── image
-│   │       │   │   └── login
-│   │       │   │       ├── error.png
-│   │       │   │       ├── pwd.png
-│   │       │   │       └── user.png
-│   │       │   └── js
-│   │       │       └── login
-│   │       │           ├── jquery
-│   │       │           │   └── jquery.min.js
-│   │       │           └── md5
-│   │       │               └── md5.js
-│   │       └── templates
-│   │           ├── login.html
-│   │           └── welcome.html
-│   └── test
-│       └── java
-│           └── com
-│               └── unionstars
-│                   └── user
-│                       └── center
-│                           ├── BaseTest.java
-│                           └── service
-│                               └── UserServiceTest.java
+##### 架构分层
 
+架构分层是架构领域里边讨论了又讨论的问题，一般都是遵循SOLID原则去分，但是分的形式也有很多，在微服务兴起之后，DDD又被重提并得到了很多应用，无论上战略和战术方面都对行业有一定的影响，其中这微软更是在推广自己容器化的时候提供了一套基于DDD的.net应用程式架构的demo，java领域里完整实施DDD的应用并不多，这里并没有用DDD的分层命名和组织方式，采用了传统的分层架构。不过相信在不断的实践过程中，基于DDD思想一定会创造出更多的优秀框架。
 
-user-gateway
-├── pom.xml
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── com
-    │   │       └── unionstars
-    │   │           └── user
-    │   │               └── gateway
-    │   │                   ├── RestApplication.java
-    │   │                   ├── config
-    │   │                   │   ├── BaseResult.java
-    │   │                   │   └── SwaggerConfig.java
-    │   │                   ├── controller
-    │   │                   │   └── UserController.java
-    │   │                   └── model
-    │   │                       └── User.java
-    │   └── resources
-    │       ├── application-dev.yml
-    │       ├── application.yml
-    │       ├── logback.groovy
-    │       └── spring
-    │           ├── spring-config.xml
-    │           ├── spring-jsf-consumer.xml
-    │           └── spring-jsf-provider.xml
-    └── test
-        └── java
-            └── com
-                └── unionstars
-                    └── user
-                        └── gateway
-                            ├── BaseTest.java
-                            └── controller
-                                └── UserControllerTest.java
-##### 
 
 #### mysql规范
 
-##### 库的字符集必须使用utf8
-```sql
-  CREATE DATABASE  DBORDER CHARACTER SET utf8 ;
-  USE DBORDER;
-```
-##### 创建表的使用语句
+```mysql
+/*
+  Mysql 规范
+*/
 
-```sql
-CREATE TABLE PAGE (
-  `id` bigint(20)  unsigned   NOT NULL AUTO_INCREMENT COMMENT '自增id',
-  `url` varchar(255)  NOT NULL COMMENT '页面地址',
-  `description` varchar(255)  DEFAULT NULL COMMENT '页面描述',
-  `created` datetime NOT NULL COMMENT '创建时间',
-  `modified` datetime NOT NULL COMMENT '修改时间',
+-- ----------------------------
+-- 库的字符集必须使用utf8
+-- ----------------------------
+CREATE DATABASE test CHARACTER SET utf8;
+USE test;
+
+-- ----------------------------
+-- 有无符号:unsigned必须填；
+-- 主键自增:AUTO_INCREMENT必填;
+-- 表的引擎:ENGINE=Innodb必填;
+-- 自增起值:AUTO_INCREMENT=xx必填;
+-- 表字符集:CHARSET=utf8必填;
+-- 表的注释:COMMENT="用户表"必填;
+-- 字段注释:COMMENT="自增id"必填;
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user`
+(
+  `id`       int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `name`     varchar(100)     NOT NULL COMMENT '姓名',
+  `age`      int(11)          NOT NULL COMMENT '年龄',
+  `addr`     varchar(200) DEFAULT NULL COMMENT '地址',
+  `created`  datetime         NOT NULL COMMENT '创建时间',
+  `modified` datetime         NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=Innodb AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT="记录操作人信息";
-```
-`
-注意:
-有无符号:unsigned必须填；
-主键自增:AUTO_INCREMENT必填;
-表的引擎:ENGINE=Innodb必填;
-自增起值:AUTO_INCREMENT=xx必填;
-表字符集:CHARSET=utf8必填;
-表的注释:COMMENT="记录操作人信息"必填;
-字段注释:COMMENT="自增id"必填;
-`
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = utf8 COMMENT = '用户表';
 
-##### 增加字段时COMMENT必须填写
-```sql
-ALTER TABLE PAGE ADD COLUMN OPERATOR VARCHAR (20) NULL COMMENT '仓库操作人';
-```
+INSERT INTO t_user (name, age, addr)
+VALUES ('Jack', 20, 'BJ');
+INSERT INTO t_user (name, age, addr)
+VALUES ('Jones', 18, 'SH');
 
-##### 索引名称必须以idx开头， 唯一索引用uniq_开头
-```sql
-ALTER TABLE PAGE ADD INDEX IDX_OPERATOR(OPERATOR);
-```
+-- ----------------------------
+-- 增加字段时COMMENT必须填写
+-- ----------------------------
+ALTER TABLE t_user ADD COLUMN code VARCHAR (20) NULL COMMENT '用户编码';
 
-##### mybatis配置中习惯关键字大写，表名库名小写
+-- ----------------------------
+-- 唯一索引用uq_开头;
+-- 索引名称必须以idx开头;
+-- ----------------------------
+ALTER TABLE t_user ADD INDEX uq_name(code) USING BTREE COMMENT '用户编码唯一索引';
+ALTER TABLE t_user ADD INDEX idx_name(name) USING BTREE COMMENT '用户名称索引';
+```
 
 
 
