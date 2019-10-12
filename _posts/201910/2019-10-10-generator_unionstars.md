@@ -117,7 +117,17 @@ ALTER TABLE t_user ADD INDEX idx_name(name) USING BTREE COMMENT '用户名称索
 `该规范基础组件使用内置的版本，所有组件使用spring生态进行构建，对于开源组件提供了starter的统一使用starter的方式使用，对于没有提供starter的组件统一封装starter进行使用，非基础用户可按需选择`
 
 #### 日志使用规范
+应用中不能使用日志系统(Log4j、Logback)中的api，二应该依赖日志框架中slf4j中的API，使用门面模式的日志框架，本工程中默认使用SpringBoot默认使用的方式slf4j+Logback.
 
+尽量用英文来描述日志错误信息，如果日志中的错误信息用英文描述不清楚的话使用中文描述即可，负责容易产生歧义
+
+异常信息应该包括两类信息：案发现场信息和异常堆栈信息。如果不处理那么通过关键字throws往上抛出，交给上层处理。例如：`log.error("Transaction accounting faied, transactionId: {}, orderId: {} , case: ", tradeOrderDetailId, orderId, e);`
+
+谨慎的记录日志。业务系统与中间件的日志记录方式有比较大的差别，中间件一般在认为稳定版本的时候，就不太需要debug和info级别的信息了，或者说这些信息不关键了，业务系统，一般对日志的使用规范要有一个明确的约束，这些约束决定了生产环境中将开启什么样的日志级别。每天的日志量的预估。这里建议生产环境使用info级别的日志，预发环境可以使用debug级别日志。
+
+dubbo/jsf，一般的远程调用接口，在日志记录的时候，最好统一记录调用者的ip,appId,appName等核心信息方便问题的定位。
+
+`该规范通过脚手架生成项目中的/resources/logback.groovy提供日志的规范，其中使用规范在脚手架中附带的demo例子中对日志的使用规范进行了示例`
 
 #### JAVA开发规范
 
