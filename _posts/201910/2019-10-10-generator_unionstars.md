@@ -192,6 +192,10 @@ $ yo unionstars:application
 
 ## TODO
 
+- shop端模板工程提供;
+- man端模板工程提供;
+- portal模板工程提供;
+- app模板工程提供;
 
 ## License
 
