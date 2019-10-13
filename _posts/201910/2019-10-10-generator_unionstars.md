@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Celan 软件架构面临的问题"
+title:  "软件架构面临的问题"
 date:   2018-07-11 12:00:00
 
 categories: tool
-tags: archtecture java tool
+tags: archtecture refactoring tool
 author: "XueGang Zhang"
 image: /images/logo.png
 comments: true

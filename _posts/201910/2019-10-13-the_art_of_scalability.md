@@ -4,7 +4,7 @@ title:  "现代企业可拓展的Web架构、流程和组织"
 date:   2018-07-11 12:00:00
 
 categories: other
-tags: archtecture java tool
+tags: archtecture learningnote
 author: "XueGang Zhang"
 image: /images/logo.png
 comments: true
