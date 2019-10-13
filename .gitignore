@@ -1,5 +1,4 @@
 .DS_Store
 .idea/*.xml
 .idea/*.iml
-*.html
 out/_posts/*
