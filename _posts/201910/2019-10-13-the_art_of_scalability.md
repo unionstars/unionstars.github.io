@@ -11,7 +11,10 @@ comments: true
 published: true
 ---
 
-#### 可扩展性组织的人员配置
+![架构即未来](/assets/images/pictures/2019-10-13-the_art_of_scalability/2019-10-13-the_art_of_scalability-1.jpg?style=centerme)
+
+
+#### 一、可扩展性组织的人员配置
 
 ##### 人员和领导力对扩展性的影响
 
@@ -29,11 +32,11 @@ published: true
 
 ##### 关系、思维和商业案例
 
-#### 构建可扩展的过程
+#### 二、构建可扩展的过程
 
-#### 可扩展的架构方案
+#### 三、可扩展的架构方案
 
-#### 可扩展的架构方案
+#### 四、可扩展的架构方案
 
 
 
