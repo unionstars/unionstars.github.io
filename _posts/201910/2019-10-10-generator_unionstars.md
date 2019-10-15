@@ -187,7 +187,7 @@ $ yo unionstars:api
 **初始化一个前端网关工程(Rest)**
 
 ```
-$ yo unionstars:application
+$ yo unionstars:gateway
 ```
 
 ## TODO
