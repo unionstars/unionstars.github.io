@@ -75,14 +75,13 @@ published: true
     <td colspan="2">查询类型，如普通查询，子查询，union，物化视图等，对于只写单表的我们，意义不大，不再介绍</td>
   </tr>
   <tr>
-    <td rowspan="2">type</td>
+    <td rowspan="7">type</td>
     <td>ALL：代表全表扫描（如果有limit，也会显示ALL，其实可能没有扫描全部的数据，扫描部分就停止了），
-</td>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    </td>
+    
   </tr>
   <tr>
-    <td>c2</td>
-    <td>c3</td>
+    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
   </tr>
 </table>
 
