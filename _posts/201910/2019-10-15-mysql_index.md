@@ -57,14 +57,35 @@ published: true
 
 #### 执行计划
 
-<img src="/assets/images/pictures/2019-10-15-mysql_index/mysqlExplain.png" alt="sql执行计划" style="zoom:50%" />
-
 通过explain命令我们可以查看sql的执行计划，然后我们依次解读一下执行计划的列。
 
-| 列名 | 解读                                                                                                                                                                          |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id   | id用来表示执行顺序，id相同的为一组，先执行id数字大的组，然后执行数字小的组。在id相同的一组内，顺序由上而下执行。          子查询和union操作产生新的id，普通的join不会产生新id |
-| select type |  查询类型，如普通查询，子查询，union，物化视图等，对于只写单表的我们，意义不大，不再介绍  |
+<img src="/assets/images/pictures/2019-10-15-mysql_index/mysqlExplain.png" alt="sql执行计划" style="zoom:50%" />
+
+<table>
+  <tr>
+    <th>列名</th>
+    <th>解读</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td colspan="2">id用来表示执行顺序，id相同的为一组，先执行id数字大的组，然后执行数字小的组。在id相同的一组内，顺序由上而下执行。子查询和union操作产生新的id，普通的join不会产生新id </td>
+  </tr>
+  <tr>
+    <td>select type</td>
+    <td colspan="2">查询类型，如普通查询，子查询，union，物化视图等，对于只写单表的我们，意义不大，不再介绍</td>
+  </tr>
+  <tr>
+    <td rowspan="2">type</td>
+    <td>ALL：代表全表扫描（如果有limit，也会显示ALL，其实可能没有扫描全部的数据，扫描部分就停止了），
+</td>
+    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+  </tr>
+  <tr>
+    <td>c2</td>
+    <td>c3</td>
+  </tr>
+</table>
+
 
 
 #### 索引匹配的原则
