@@ -47,8 +47,12 @@ published: true
 
 <img src="/assets/images/pictures/2019-10-15-mysql_index/redBlack.png" alt="二叉树" style="zoom:50%" />
 
-[五分钟搞懂什么是红黑树（全程图解）]https://www.toutiao.com/i6584714397543825927/?tt_from=weixin_moments&utm_campaign=client_share&wxshare_count=2&from=timeline&share_type=original&timestamp=1544587349&app=news_article&utm_source=weixin_moments&iid=53509037357&utm_medium=toutiao_android&group_id=6584714397543825927&pbid=6633976754150000142
+因为这篇文章不是讲红黑树的，我们只需要知道，这个数据结构的一个特点，如果要搞懂红黑树的一个基本原理可以参考这个文章：
+[五分钟搞懂什么是红黑树（全程图解）](https://www.toutiao.com/i6584714397543825927/?tt_from=weixin_moments&utm_campaign=client_share&wxshare_count=2&from=timeline&share_type=original&timestamp=1544587349&app=news_article&utm_source=weixin_moments&iid=53509037357&utm_medium=toutiao_android&group_id=6584714397543825927&pbid=6633976754150000142)，我们看到红黑树的高度是没有限制的，这样数据量大的时候，发生IO次数可能就会非常多，影响性能。`那么怎么解决IO次数多的问题呢，也很简单，让每一层存储更多的数据就好了，于是就有人想到了平衡N叉查找树`
 
+**平衡多路查找树（B-Tree）/ (B+Tree)**
+
+因为增加了叉数，树的高度就可以控制了，于是就产生了平衡N叉查找树。B树在提高了IO性能的同时并没有解决元素遍历的效率低下的问题，B+树只需要去遍历叶子节点就可以实现整棵树的遍历。而且在数据库中基于范围的查询是非常频繁的，而B树不支持这样的操作或者说效率太低。所以B+树产生了。
 
 
 #### 执行计划
