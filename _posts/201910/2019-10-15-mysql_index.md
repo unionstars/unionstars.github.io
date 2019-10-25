@@ -75,6 +75,14 @@ published: true
     <td colspan="2">查询类型，如普通查询，子查询，union，物化视图等，对于只写单表的我们，意义不大，不再介绍</td>
   </tr>
   <tr>
+    <td>table</td>
+    <td colspan="2">该行分析对应的表名</td>
+  </tr>
+  <tr>
+    <td>partitions</td>
+    <td colspan="2">匹配的分区</td>
+  </tr>
+  <tr>
     <td rowspan="7">type</td>
     <td>ALL：代表全表扫描（如果有limit，也会显示ALL，其实可能没有扫描全部的数据，扫描部分就停止了），</td>
   </tr>
@@ -82,25 +90,66 @@ published: true
     <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
   </tr>
   <tr>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    <td>irange：索引范围扫描（用户可以用到索引的> between in等）。</td>
   </tr>
   <tr>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    <td>ref：是非唯一性索引扫描，常见的是作用在=的比较上，但是非唯一。</td>
   </tr>
   <tr>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    <td>eq_ref：ref的唯一性索引扫描。</td>
   </tr>
   <tr>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    <td>const, system: 当MySQL对查询某部分进行优化，并转换为一个常量时，使用这些类型访问。如将主键置于where列表中，MySQL就能将该查询转换为一个常量。system是const类型的特例，当查询的表只有一行的情况下， 使用system。</td>
   </tr>
   <tr>
-    <td>index：代表索引全扫描，它的性能甚至不如ALL，使用这个一般是为了避免排序或者覆盖索引扫描。</td>
+    <td>index_merge：此连接类型表示使用索引合并优化。</td>
   </tr>
-
 <tr>
-    <td>id</td>
-    <td colspan="2">id用来表示执行顺序，id相同的为一组，先执行id数字大的组，然后执行数字小的组。在id相同的一组内，顺序由上而下执行。子查询和union操作产生新的id，普通的join不会产生新id </td>
+    <td>possible_keys</td>
+    <td colspan="2">可能选择的索引</td>
 </tr>
+<tr>
+    <td>key</td>
+    <td colspan="2">实际选择的索引</td>
+</tr>
+<tr>
+    <td>key_len</td>
+    <td colspan="2">实际选择的索引的长度</td>
+</tr>
+<tr>
+    <td>ref</td>
+    <td colspan="2">常数或列名。指与索引列比较的列或常数</td>
+</tr>
+<tr>
+    <td>rows</td>
+    <td colspan="2">表示MySQL根据表统计信息及索引选用情况，估算的找到所需的记录所需要读取的行数</td>
+</tr>
+<tr>
+    <td>filtered</td>
+    <td colspan="2">按表条件过滤行数的百分比</td>
+</tr>
+<tr>
+    <td rowspan="7">extra</td>
+    <td>use index：使用了覆盖索引扫描。</td>
+  </tr>
+  <tr>
+    <td>use where:这里并不是表示使用了where条件的意思，而是说服务层从存储引擎获取数据之后再进行where过滤。（事实上，这一列总是在不该出现的时候出现）</td>
+  </tr>
+  <tr>
+    <td>Using index condition：表示使用索引条件下推。</td>
+  </tr>
+  <tr>
+    <td>Using filesort：使用了排序</td>
+  </tr>
+  <tr>
+    <td>Using temporary：使用了临时表</td>
+  </tr>
+  <tr>
+    <td>Impossible WHERE：出现在优化阶段，优化器根据表定义可以判断出where条件根本不可能成立，比如主健不可能为空</td>
+  </tr>
+  <tr>
+    <td>Using join buffer (Block Nested Loop)：mysql使用了优化过的nest loop算法，一次读取多个块.</td>
+  </tr>
 </table>
 
 
