@@ -27,8 +27,7 @@ published: true
 
 对该二叉树的节点进行查找发现深度为1的节点的查找次数为1，深度为2的查找次数为2，深度为n的节点的查找次数为n，因此其平均查找次数为 (1+2+2+3+3+3) / 6 = 2.3次
 
-[二叉树的构造过程演示](https://visualgo.net/zh/bst)，[二叉树的构造过程演示](https://www.cs.usfca.edu/~galles/visualization/flash.html) 我们可以这两个在线算法可视化的平台去演示一下，二叉树的构造和删改过程，不能发现二叉树在查找、插入和删除的时候都比较快。与传统的顺序查找优势明显，删除算法相比复杂一些。但是他有个比较大的问题，
-二叉树的任意构造，会出现一种极端情况，如图：
+这里有推荐两个比较好的算法的演示平台：[二叉树的构造过程演示](https://visualgo.net/zh/bst)；[二叉树的构造过程演示](https://www.cs.usfca.edu/~galles/visualization/flash.html) 我们可以在这里演示二叉树的构造和删改过程，我们不难发现，虽然在删除方面算法相对比较复杂，但是在查找、插入和删除的时候都比较快。但是它有个比较大的问题，二叉树的任意构造，会出现一种极端情况，如图：
 
 <img src="/assets/images/pictures/2019-10-15-mysql_index/skewedleft.png" alt="二叉树" style="zoom:50%" />
 
@@ -36,8 +35,19 @@ published: true
 
 **平衡二叉查找树（AVL Tree）**
 
+为了避免插入新节点后导致的不平衡问题，AVL走向了极端，它给自己设定了一个约定，任何一个节点的左子树和右子树的深度之差不得超过1，当然为了实现这个约定，它每次插入删除数据通过不断的left rotation和right rotation来保证平衡。
 
+<img src="/assets/images/pictures/2019-10-15-mysql_index/avl.png" alt="二叉树" style="zoom:50%" />
 
+而旋转是非常耗时的。由此他只适合在插入和删除次数比较少，但是查找多的场景下。`那么如何解决这种旋转的问题，是不是让旋转次数少一点，折中处理下就好了，于是就有了红黑树`
+
+**红黑树**
+
+相对于要求严格的AVL树来说，它的旋转次数变少，为了实现这种旋转次数的减少，它也自己设定了一个约定`通过对任何一条从根到叶子的路径上各个节点着色的方式的限制，红黑树确保没有一条路径会比其它路径长出两倍。`， 我们可以看出它是一种弱平衡的二叉树。它基本长这个样子：
+
+<img src="/assets/images/pictures/2019-10-15-mysql_index/redBlack.png" alt="二叉树" style="zoom:50%" />
+
+[五分钟搞懂什么是红黑树（全程图解）]https://www.toutiao.com/i6584714397543825927/?tt_from=weixin_moments&utm_campaign=client_share&wxshare_count=2&from=timeline&share_type=original&timestamp=1544587349&app=news_article&utm_source=weixin_moments&iid=53509037357&utm_medium=toutiao_android&group_id=6584714397543825927&pbid=6633976754150000142
 
 
 
