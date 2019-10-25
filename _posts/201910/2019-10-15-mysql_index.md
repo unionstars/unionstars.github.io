@@ -23,7 +23,7 @@ published: true
 
 我们先来看下比较平衡的二叉树：
 
-<img src="/assets/images/pictures/2019-10-15-mysql_index/BinarySearchTree.png"  height="200" width="300">
+<img src="/assets/images/pictures/2019-10-15-mysql_index/BinarySearchTree.png" alt="二叉树" style="zoom:40%" />
 
 
 
