@@ -21,6 +21,7 @@ published: true
 我们先来看下比较平衡的二叉树
 
 ![avl平衡树](/assets/images/pictures/2019-10-15-mysql_index/avl.png)
+<img src="/assets/images/pictures/2019-10-15-mysql_index/avl.png"  height="330" width="495">
 
 
 
@@ -45,12 +46,4 @@ published: true
 
 
 
-#### 排查问题
-
-
-
-本文中还参考了如下内容：
-    
-[mysql官方手册](https://dev.mysql.com/doc/refman/5.6/en/innodb-deadlocks.html)
-
-[何登成的技术博客](http://hedengcheng.com/?p=771)
+#### 总结
