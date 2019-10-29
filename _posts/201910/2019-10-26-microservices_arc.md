@@ -23,15 +23,14 @@ published: true
 
 该应用通过Apache/Nginx实现请求的转发和负载均衡，将单体打包为WAR文件，为了提高扩展性和可用性，你可以在负载均衡器之后运行此应用的多个实例。
 
-<img src="/assets/images/pictures/2019-10-26-microservices_arc/DecomposingApplications.011.jpg" alt="典型的单体架构" style="zoom:50%" />
+<img src="/assets/images/pictures/2019-10-26-microservices_arc/DecomposingApplications.011.jpg" alt="典型的单体架构" style="zoom:80%" />
 
-这个单体应用的好处：
+**这个单体应用的好处：**
 - 易于开发 — 当前开发工具与IDE的设计目标即在于支持单体应用的开发。
 - 易于部署 — 你只需要将该WAR（或者目录层级）部署在合适的运行环境中即可。
 - 易于扩展 — 你可以在负载均衡器后面运行多个应用副本实现扩展。
 
-然而，一旦应用变大、团队扩大，这种方案的弊端将会变得愈发明显：
-
+**然而，一旦应用变大、团队扩大，这种方案的弊端将会变得愈发明显：**
 - 单体应用巨大的代码库可能会让人望而生畏，特别是对那些团队新成员来说。应用难以被理解和进行修改，进而导致开发速度减慢。由于没有清晰的模块边界，模块化会逐渐消失。另外，由于难以正确把握代码变化，导致代码质量逐步下滑，陷入恶性循环。
 - 过载的IDE——代码库越大，IDE速度越慢，开发者的生产效率越低。
 - 过载的Web容器——应用越大，Web容器启动时间越长。容器启动耗费时间，极大影响到开发者的生产效率。对部署工作也有负面影响。
@@ -48,7 +47,7 @@ published: true
 
 Scale Cube 是用于定义微服务和扩展技术产品的模型。AKF Partners于2007年发明了Scale Cube，最初于2007年在我们的博客上在线发布（原创文章），随后在我们的第一本书“ 可伸缩性艺术”和第二本书“ 可伸缩性规则”中发布。 
 
-<img src="/assets/images/pictures/2019-10-26-microservices_arc/DecomposingApplications.021.jpg" alt="微服务架构" style="zoom:50%" />
+<img src="/assets/images/pictures/2019-10-26-microservices_arc/DecomposingApplications.021.jpg" alt="微服务架构" style="zoom:80%" />
 
 Scale Cube（有时称为“AKF Scale Cube”或“AKF Cube”）由3个轴组成： 
 - X轴：服务和数据的水平复制和克隆
@@ -59,9 +58,9 @@ Scale Cube（有时称为“AKF Scale Cube”或“AKF Cube”）由3个轴组�
 
 此应用程序被部署为一组服务集合。
 
-<img src="/assets/images/pictures/2019-10-26-microservices_arc/Microservice_Architecture.png" alt="微服务架构" style="zoom:50%" />
+<img src="/assets/images/pictures/2019-10-26-microservices_arc/Microservice_Architecture.png" alt="微服务架构" style="zoom:80%" />
 
-这个解决方案有什么好处呢， 他的出现也主要是解决单体应用面临的问题，我们看看他如何解决了单体架构的问题：
+**这个解决方案有什么好处呢，他的出现也主要是解决单体应用面临的问题，我们看看他如何解决了单体架构的问题：**
 - 每项微服务相对较小，易于开发者理解
 - IDE处理速度更快，可提高开发者生产效率
 - Web容器启动速度更快，提高开发者生产效率并可加快部署速度
@@ -71,8 +70,7 @@ Scale Cube（有时称为“AKF Scale Cube”或“AKF Cube”）由3个轴组�
 - 每项服务可独立进行开发与部署
 - 无需长期使用同一套技术堆栈
 
-那微服务架构优势很什么弊端呢？
-
+**那微服务架构优势很什么弊端呢？**
 - 开发者必须应对创建分布式系统所产生的额外的复杂因素。
 - 现有开发者工具/IDE主要面向单体应用程序，因此无法显式支持分布式应用的开发。
 - 测试工作更加困难。
@@ -83,17 +81,17 @@ Scale Cube（有时称为“AKF Scale Cube”或“AKF Cube”）由3个轴组�
 - 内存占用量更高。微服务架构使用N*M个服务实例替代N个单体应用实例，如果每项服务运行自己的JVM（或者其它类似机制），且各实例之间需要进行隔离，那将导致M倍JVM运行时的额外开销。另外，如果每项服务都在自己的虚拟机（例如 EC2 实例）上运行，如同Netflix一样，那么额外开销会更高。
 需要解决的问题
 
-微服务架构的弊端使它必须面临一些必须要解决的问题？
+**微服务架构的弊端使它必须面临一些必须要解决的问题？**
 
-**判断什么时候应该使用微服务架构**
-
-
+###### 判断什么时候应该使用微服务架构
 
 
 
 
 
-## 参考
+
+
+#### 参考
 
 [微服务架构模式](https://microservices.io/)
 
