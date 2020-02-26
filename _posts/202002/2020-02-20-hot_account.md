@@ -125,7 +125,7 @@ published: true
 最后我们通过思维导图来梳理一下今天的知识点，让你对热点账户的解决方式有一个更直观的认识。（图11）
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/oxVCYaYlF48pMJ91.png" alt="Sample"  width="50%" height="50%">
+	<img src="https://uploader.shimo.im/f/oxVCYaYlF48pMJ91.png" alt="Sample"  width="50%" height="49%">
 	<p align="center">
 		<em>图11</em>
 	</p>
