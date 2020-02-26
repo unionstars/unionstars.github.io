@@ -18,9 +18,9 @@ published: true
 今天分享的是关于如何解决互联网热点账户的问题。互联网解决了人们交易活动地域上的限制，产生了很多巨无霸的商家，对这些巨无霸商家的交易账户的操作就成了热点操作，因为明细和余额的更新是在一个事务中进行，但是对余额操作是稀缺的资源，所以更新余额就成了瓶颈。今天我和大家一起来聊一下如何解决和规避热点账户的问题（图1）。
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/skr22p7b3x8cq8w8.png" alt="Sample"  width="250" height="140">
+	<img src="https://uploader.shimo.im/f/skr22p7b3x8cq8w8.png" alt="Sample"  width="60%" height="60%">
 	<p align="center">
-		<em>图片示例2</em>
+		<em>图1</em>
 	</p>
 </p>
 
