@@ -33,7 +33,7 @@ rectangle "账户" <<Account>> #TECHNOLOGY {
 
 效果图：
 <p align="center">
-	<img src="https://uploader.shimo.im/f/KmP9UIZ8qWwcxXwF.png!thumbnail" alt="Sample"  width="50%" height="50%">
+	<img src="https://uploader.shimo.im/f/KmP9UIZ8qWwcxXwF.png!thumbnail" alt="Sample"  width="30%" height="30%">
 	<p align="center">
 		<em>图1</em>
 	</p>
