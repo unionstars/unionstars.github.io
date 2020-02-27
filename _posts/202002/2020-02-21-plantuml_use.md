@@ -38,3 +38,46 @@ rectangle "账户" <<Account>> #TECHNOLOGY {
 		<em>图1</em>
 	</p>
 </p>
+
+参考：
+[plantuml relation](https://plantuml.com/zh/ie-diagram)
+[plantuml deployment](https://plantuml.com/zh/deployment-diagram)
+
+
+#### 思维导图
+
+```plantuml
+@startmindmap
+<style>
+mindmapDiagram {
+  .important * {
+	textColor red
+  }
+}
+</style>
+
+* 热点账户
+** 热点账户的概念
+*** 什么是热点账户
+*** <color:red><&star>三户模型<<important>>
+*** 热点账户的分类
+**[#ffffff] <color:red><&star>解决热点账户的方案
+*** <color:red><&star>限流<<important>>
+*** <color:red><&star>缓冲<<important>>
+*** <color:red><&star>批量<<important>>
+*** 分治
+*** <color:red><&star>缓存<<important>>
+** 识别热点账户
+@endmindmap
+```
+
+参考：
+[plantuml color](https://plantuml.com/zh/creole)
+[plantuml mapmind](https://plantuml.com/zh/mindmap-diagram)效果图：
+
+<p align="center">
+	<img src="https://uploader.shimo.im/f/erTu3sovZuUjkGxM.png!thumbnail" alt="Sample"  width="30%" height="30%">
+	<p align="center">
+		<em>图1</em>
+	</p>
+</p>
