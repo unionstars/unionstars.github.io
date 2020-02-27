@@ -18,7 +18,7 @@ published: true
 今天分享的是关于如何解决互联网热点账户的问题。互联网解决了人们交易活动地域上的限制，产生了很多巨无霸的商家，对这些巨无霸商家的交易账户的操作就成了热点操作，因为明细和余额的更新是在一个事务中进行，但是对余额操作是稀缺的资源，所以更新余额就成了瓶颈。今天我和大家一起来聊一下如何解决和规避热点账户的问题（图1）。
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/skr22p7b3x8cq8w8.png" alt="Sample"  width="50%" height="50%">
+	<img src="https://images-cdn.shimo.im/skr22p7b3x8cq8w8/image.png__thumbnail" alt="Sample"  width="50%" height="50%">
 	<p align="center">
 		<em>图1</em>
 	</p>
@@ -126,7 +126,7 @@ published: true
 那么说了这么多针对热点账户的解决方法，热点账户要怎样识别呢。我见过的账务系统，有事前配置的，也有使用redis计数器的。热点账户的识别因为比较具象，所以比热点事情的识别相比来说要容易很多。我这里介绍一个通过大数据平台来识别的方式。通过Spark Streaming的窗口计算(window computations)的功能，分析当前窗口下数据访问次数统计，最终发现热点key，把热点key上报给配置中心，再从配置中心下发给各个客户端，来实现热点账户的识别与处理的自动化（图10）。
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/44k2dOkJZvodW7d6.png" alt="Sample"  width="50%" height="50%">
+	<img src="https://images-cdn.shimo.im/44k2dOkJZvodW7d6/image.png" alt="Sample"  width="50%" height="50%">
 	<p align="center">
 		<em>图10</em>
 	</p>
@@ -141,7 +141,7 @@ published: true
 最后我们通过思维导图来梳理一下今天的知识点，让你对热点账户的解决方式有一个更直观的认识。（图11）
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/oxVCYaYlF48pMJ91.png" alt="Sample"  width="50%" height="50%">
+	<img src="https://images-cdn.shimo.im/oxVCYaYlF48pMJ91/image.png" alt="Sample"  width="50%" height="50%">
 	<p align="center">
 		<em>图11</em>
 	</p>
