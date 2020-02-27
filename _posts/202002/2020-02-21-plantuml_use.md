@@ -76,8 +76,9 @@ mindmapDiagram {
 [plantuml mapmind](https://plantuml.com/zh/mindmap-diagram)效果图：
 
 <p align="center">
-	<img src="https://uploader.shimo.im/f/erTu3sovZuUjkGxM.png!thumbnail" alt="Sample"  width="30%" height="30%">
+	<img src="https://uploader.shimo.im/f/erTu3sovZuUjkGxM.png!thumbnail" alt="Sample"  width="50%" height="50%">
 	<p align="center">
 		<em>图1</em>
 	</p>
 </p>
+
