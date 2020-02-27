@@ -31,7 +31,8 @@ rectangle "账户" <<Account>> #TECHNOLOGY {
 用户||--left--||账户
 ```
 
-效果图：
+>效果图：
+
 <p align="center">
 	<img src="https://uploader.shimo.im/f/KmP9UIZ8qWwcxXwF.png!thumbnail" alt="Sample"  width="30%" height="30%">
 	<p align="center">
@@ -39,10 +40,12 @@ rectangle "账户" <<Account>> #TECHNOLOGY {
 	</p>
 </p>
 
-参考：
-[plantuml relation](https://plantuml.com/zh/ie-diagram)
-[plantuml deployment](https://plantuml.com/zh/deployment-diagram)
+>参考：
 
+name | 参考 |  
+-|-|-
+关系 | [plantuml relation](https://plantuml.com/zh/ie-diagram) |
+部署元素 | [plantuml deployment](https://plantuml.com/zh/deployment-diagram) |
 
 #### 思维导图
 
@@ -71,9 +74,7 @@ mindmapDiagram {
 @endmindmap
 ```
 
-参考：
-[plantuml color](https://plantuml.com/zh/creole)
-[plantuml mapmind](https://plantuml.com/zh/mindmap-diagram)效果图：
+>效果图：
 
 <p align="center">
 	<img src="https://uploader.shimo.im/f/erTu3sovZuUjkGxM.png!thumbnail" alt="Sample"  width="50%" height="50%">
@@ -81,4 +82,12 @@ mindmapDiagram {
 		<em>图1</em>
 	</p>
 </p>
+
+>参考：
+
+name | 参考 |  
+-|-|-
+颜色 | [plantuml color](https://plantuml.com/zh/creole) |
+脑图 | [plantuml mapmind](https://plantuml.com/zh/mindmap-diagram) |
+
 
