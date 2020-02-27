@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "负载均衡集群与实践中的应用"
+title:  "分布式系统的高可靠"
 date:   2018-07-11 12:00:00
 
 categories: java
