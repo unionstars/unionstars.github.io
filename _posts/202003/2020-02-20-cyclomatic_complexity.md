@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "代码圈复杂度的标准"
+title:  "如何降低代码的圈复杂度"
 date:   2018-07-11 12:00:00
 
 categories: tool
