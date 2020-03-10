@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "热点账户问题的解决与识别"
+title:  "如何识别与解决热点账户"
 date:   2018-07-11 12:00:00
 
 categories: tool

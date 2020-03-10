@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "如何用plantuml画出一些好图"
+title:  "如何用plantuml画一些常用的图形"
 date:   2018-07-11 12:00:00
 
 categories: tool

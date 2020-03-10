@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "软件架构面临的问题"
+title:  "如何通过脚手架来规范研发"
 date:   2018-07-11 12:00:00
 
 categories: tool
