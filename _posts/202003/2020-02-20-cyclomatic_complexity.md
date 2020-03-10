@@ -42,7 +42,7 @@ N：控制流图中的节点数量
 
 我们先来看一下圈复杂度与代码质量以及测试和维护成本之间的一个关系。
 
-![关系图](/assets/images/pictures/2020-02-20-cyclomatic_complexity/02.png?style=centerme)
+![关系图](/assets/images/pictures/2020-02-20-cyclomatic_complexity/02.jpg?style=centerme)
 
 我们可以看到当圈复杂度，在1-10之间的时候，代码是清晰，结构化的。可测试性比较高，维护成本也比较低。随着圈复杂度的升高，代码的状况开始恶化，当大于30的时候，代码已经逐步变为不可读，维护成本非常高。
 
