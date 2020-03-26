@@ -152,6 +152,10 @@ xxl-job的负载均衡是通过调度中心分发任务到具体的执行器中�
 对DAG的支持比较完善
 
 
+#### xxlJOb调研图
+![关系图](/assets/images/pictures/2020-03-18-distribute-job/08.png?style=centerme)
+
+
 文章参考：
 [服务治理](https://blog.csdn.net/chengxiong5591/article/details/100912495)
 [elasticjob源码分析](https://blog.csdn.net/qq924862077/article/details/83036626)
