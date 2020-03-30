@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ServiceMesh"
+title:  "分布式系统理论"
 date:   2018-07-11 12:00:00
 
 categories: tool
@@ -153,7 +153,7 @@ xxl-job的负载均衡是通过调度中心分发任务到具体的执行器中�
 
 
 文章参考：
-[服务治理](https://blog.csdn.net/chengxiong5591/article/details/100912495)
+[闲聊调度系统 Apache Airflow](https://zhuanlan.zhihu.com/p/100526494)
 [elasticjob源码分析](https://blog.csdn.net/qq924862077/article/details/83036626)
 [elasticjo失效转移](https://www.cnblogs.com/haoxinyue/p/7068115.html)
 [xxl-job如何进行稳定性保障](https://blog.csdn.net/royal_lr/article/details/100113760)
