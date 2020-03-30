@@ -177,8 +177,8 @@ xxl-job的负载均衡是通过调度中心分发任务到具体的执行器中�
 
 [xxl-job细节](https://juejin.im/post/5d8d85696fb9a04dda7087c6)
 
-[分布式调度](https://www.upyun.com/opentalk/303.html)
-
-[xxl-job源码研究之--路由算法及实现](http://ehedgehog.net/2018/08/19/xxl-job%E6%BA%90%E7%A0%81%E7%A0%94%E7%A9%B6%E4%B9%8B--%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95%E5%8F%8A%E5%AE%9E%E7%8E%B0/)
+[XXL-JOB ：分布式任务调度平台](https://www.upyun.com/opentalk/303.html)
 
 [分布式定时任务调度系统技术解决方案](https://www.cnblogs.com/rainswinds/p/10930495.html)
+
+[elastic-job-lite源码分析之选举及分片](https://www.jianshu.com/p/a7e291f3049b)
