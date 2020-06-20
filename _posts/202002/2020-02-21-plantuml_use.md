@@ -25,11 +25,39 @@ rectangle "用户" <<User>> #DodgerBlue {
 }
 rectangle "账户" <<Account>> #TECHNOLOGY {
 }
+客户-up-用户
+客户-up-账户
+用户--left--账户
 
-客户|o-up-||用户
-客户|o-up-||账户
-用户||--left--||账户
 ```
+
+
+
+```plantuml
+rectangle "账户1" #Gold {
+}
+rectangle "账户2" #Gold {
+}
+rectangle "账户3" #Gold {
+}
+rectangle "账户4" #Gold {
+}
+
+rectangle "收款商户待清算户" #cornflowerblue {
+}
+rectangle "收款商户基本户" #cornflowerblue {
+}
+rectangle "收款商户银行账户" #Green {
+}
+
+账户1 ...> 收款商户待清算户 : 捐款
+账户2 ...> 收款商户待清算户 : 捐款
+账户3 ...> 收款商户待清算户 : 捐款
+账户4 ...> 收款商户待清算户 : 捐款
+收款商户待清算户..left..> 收款商户基本户 : 到达金额结算
+收款商户银行账户<..up.收款商户基本户  : 提现
+```
+
 
 >效果图：
 
